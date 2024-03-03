@@ -1,0 +1,96 @@
+<!-- 
+TUD Website by Emmanuel Awode 11/02/2024
+-->
+<!DOCTYPE html>
+<html>
+
+  
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function myFunction() {
+        alert("Hello I am an alert box only show when you double click the button!");
+    }
+
+    function playMusic() {
+  // Check if there's already an audio element created
+  let audio = document.getElementById('musicPlayer');
+  if (!audio) {
+    // Create audio element if it doesn't exist
+    audio = document.createElement('audio');
+    audio.id = 'musicPlayer';
+    audio.src = 'vois jersey.mp3'; // Your music file path
+    document.body.appendChild(audio);
+  }
+
+  // Play or pause the music if the audio element already exists
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+    audio.currentTime = 0; // Optional: rewind to start
+  }
+}
+    </script>
+  </head>
+  <div id="gradient">
+<body>
+    <div class="nav-items">
+        <nav>
+        <div class="logo">OFFICIAL IZROSHBEATS</div>
+        <img src="arrow.png" alt="illustration"class="pointer anim"/>
+        <img src="vinyl.png" alt="Spinning Image" class="spinning-image-right" width="80" height="80" onclick="playMusic()" style="animation: spin 2s linear infinite;">
+         <ul>   
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="about.html">About</a> </li>
+          <li><a href="request.html"> Request Beat</a></li>
+          <li><a href="malito:izroshbeats@gmail.com">Contact</a></li>
+        </ul>   
+        </div>
+  </nav>
+
+  <div class="hero-container anim">
+    <div class="column-left">
+      <h1>Request A Beat</h1>
+      <p><span class="required"></span> required field.</p>
+      <form action="/submit-your-form" method="post">
+        <label for="name" class="required">Name: <input type="text" id="name" name="name" required placeholder="Please Enter Your Name Here"></label>
+      
+    
+        <label for="email" class="required">E-mail:<input type="email" id="email" name="email"required placeholder="Enter your email"></label>
+        
+    
+        <label class="option">Genre:</label>
+        <input type="radio" id="rnb" name="genre" value="rnb"> R&B
+        <input type="radio" id="trap" name="genre" value="trap"> Trap
+        <input type="radio" id="drill" name="genre" value="drill"> Drill
+        <input type="radio" id="afro" name="genre" value="afro"> Afro
+        <input type="radio" id="other" name="genre" value="other"> Other
+    
+    
+        <label for="website">Specify:</label>
+        <input type="text" id="website" name="website" placeholder="Enter your specifications">
+    
+    
+        <label for="comment">Additional Information:</label>
+        <textarea id="comment" name="comment" rows="4"></textarea>
+    
+        <input type="submit" value="Submit">
+    </div>
+    <div class="column-right">
+        <img
+          src="studio.jpg"
+          alt="illustration
+      "
+          class="izrosh-image anim"
+        />
+      </div>
+  </div>
+<footer>
+  <p id="copyright">&copy; 2024 IZ Productions. All Rights Reserved.</p>
+</footer>
+
+</div>
+</body>
+
+</html>

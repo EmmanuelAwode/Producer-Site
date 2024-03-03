@@ -1,0 +1,376 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+nav {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav-items{
+  margin-top: 10px;
+  margin-left: 100px;
+  width: 140px;
+  }
+  
+  nav ul li {
+    flex: 1;
+    text-align: right;
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+  }
+  
+  nav ul li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #ad5b18,#da0b0b);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    transition: 0.5s;
+
+  }
+  
+  nav ul li a:hover{
+    background: #7a7676;
+    color: #000;
+    box-shadow: 0 6px 12px rgba(100, 71, 71, 0) 0px 0px 50px 0  rgb(175, 65, 65);
+    transform: translateX(-10px); 
+    transition: all 0.2s ease-in-out;
+    transition: transform 0.3s ease; 
+    border-top-right-radius: 30px;
+  }
+
+.logo {
+  margin: 10px;
+  height: auto;
+  cursor: default;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0 2rem;
+  display: block;
+}
+
+.pointer {
+  margin: 10px;
+  left: 20%;
+  height: auto;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  display: block;
+  width: 7%;
+  height: 7%;
+  position: fixed;
+} 
+
+/* Keyframes for the animation */
+@keyframes movePointer {
+  0% {
+    transform: translateX(-50px); /* Move left */
+  }
+  50% {
+    transform: translateX(50px); /* Move right */
+  }
+  100% {
+    transform: translateX(-50px); /* Return to starting position */
+  }
+}
+
+/* Applying the animation */
+.pointer {
+  animation: movePointer 2s infinite; /* Adjust time as needed */
+}
+
+
+nav a{
+  text-decoration: none;
+  color: #000;
+  padding: 0 1.5rem;
+} 
+
+.hero-container {
+  margin-bottom: 300px;
+  display:block;
+  grid-template-columns: 1fr 1fr;
+  height: 95vh;
+  padding: 3rem calc((100vw - 1300px) / 2);
+}
+
+.column-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #000;
+  padding: 0rem 2rem;
+}
+
+.column-left h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  cursor: default;
+}
+
+/* Style and animation for p elements within the .column-left class container */
+.column-left p {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  animation: column-left 1s ease-in-out infinite alternate;
+}
+
+/* Keyframes definition remains the same */
+@keyframes column-left {
+  from {
+    text-shadow: 0 0 10px #000000, 0 0 20px #fff, 0 0 30px #e69d00, 0 0 30px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #000000, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 40px #ff4da6;
+  }
+}
+
+
+.column-right {
+  margin-bottom: 50px;
+  display: inline-flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0rem 2rem;
+}
+
+.column-bottom {
+  margin-top: 2rem;
+  display: inline-flex;
+  justify-content: end;
+  align-items: end;
+  padding: 0rem 2rem;
+}
+
+.collins-image {
+  width: 35%;
+  height: 50%;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  display: inline;
+  mask-image: radial-gradient(circle, rgb(107, 45, 45) 40%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle, rgb(80, 10, 10) 40%, transparent 70%);
+}
+
+.izrosh-image {
+  width: 35%;
+  height: 50%;
+  position: fixed;
+  bottom: 90px;
+  right: 10%;
+  display: inline;
+  mask-image: radial-gradient(circle, white 40%, transparent 60%);
+  -webkit-mask-image: radial-gradient(circle, white 40%, transparent 60%);
+}
+
+.izrosh-image img :hover{
+  display: block; /* Removes bottom space/gap */
+  width: 100%; /* Adjust as necessary */
+  height: auto; /* Adjust as necessary */
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+button {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  border: none;
+  color: #be2431;
+  background: #000;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+  transition: transform 0.3s ease; 
+}
+
+button:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0) 0px 0px 50px 0  rgb(175, 65, 65);
+  transform: translateY(-10px); 
+}
+
+button:focus,
+button:active {
+  outline: none; /* Removes the default focus outline */
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #4CAF50; /* Custom focus ring */
+}
+button:disabled {
+  background-color: #ccc; /* Gray background */
+  color: #666; /* Dark gray text */
+  cursor: not-allowed; /* Shows a "not allowed" cursor */
+}
+
+.button-link {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  border: none;
+  color: #be2431;
+  background: #000;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+  transition: transform 0.3s ease; 
+}
+
+.button-link:hover, .button-link:focus {
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0) 0px 0px 50px 0  rgb(175, 65, 65);
+  transform: translateY(-10px); 
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: transparent;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.spinning-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: spin 4s linear infinite;
+}
+
+.spinning-image-right {
+  position:fixed /* Or absolute, depending on your needs */
+  right: 0;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.right-image {
+  justify-self: end; /* Aligns the image to the end (right) of the grid area */
+}
+
+.audio-player {
+  position: relative; /* or absolute, fixed, depending on your need */
+  top: 50px; /* distance from the top */
+  left: 200px; /* distance from the left */
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Align horizontally */
+  align-items: center; /* Align vertically */
+  height: 50vh; /* Full viewport height */
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+    cursor: pointer;
+  display: block;
+
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #010201;
+  font: inherit;
+  color: inherit;
+  line-height: 120%;
+  
+}
+
+&:hover,
+&:active {
+  border-color: var(--co-textfld-active-border);
+}
+
+&:focus {
+  border-color: var(--co-textfld-focus-border);
+}
+
+
+.anim{
+  opacity: 0;
+  transform: translateY(30px);
+  animation: moveup 0.5s linear forwards;
+
+}
+
+@keyframes moveup { 
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} 
+
+.required::after {
+  content: "*";
+  color: red;
+}
+
+.option::after {
+  content: "*";
+  color: rgb(190, 29, 29);
+}
+
+#gradient {
+  background-color: #262629;
+  background-image: linear-gradient(135deg, rgb(172, 26, 26), rgb(109, 36, 18), rgb(82, 15, 6));
+  min-height: 100vh; 
+  overflow: hidden; 
+
+}
