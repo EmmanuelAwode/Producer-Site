@@ -76,13 +76,13 @@ nav-items{
 /* Keyframes for the animation */
 @keyframes movePointer {
   0% {
-    transform: translateX(-50px); /* Move left */
+    transform: translateX(-2px); /* Move left */
   }
   50% {
-    transform: translateX(50px); /* Move right */
+    transform: translateX(45px); /* Move right */
   }
   100% {
-    transform: translateX(-50px); /* Return to starting position */
+    transform: translateX(-2px); /* Return to starting position */
   }
 }
 
